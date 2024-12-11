@@ -38,7 +38,7 @@ public class FacturaController : ControllerBase
 
     // Obtener lista de compradores con el monto total de compras realizadas 4
     [HttpGet("compradores")]
-    public IActionResult GetCompradoresConMontoTotal()
+    public IActionResult GetCompradoresConMontoTotal()  
     {
         var compradores = _facturaService.ObtenerCompradoresConMontoTotal();
         return Ok(compradores);
@@ -54,12 +54,12 @@ public class FacturaController : ControllerBase
 
             if (comuna.HasValue)
         {
-            // Si se proporciona una comuna, filtrar las facturas por esa comuna
+            
             var facturasComuna = invoices.Where(f => f.ComunaComprador == comuna.Value).ToList();
 
             if (facturasComuna.Any())
             {
-                return Ok(facturasComuna); // Devolver las facturas de la comuna específica
+                return Ok(facturasComuna); 
             }
             else
             {
@@ -68,13 +68,13 @@ public class FacturaController : ControllerBase
         }
         else
         {
-            // Si no se proporciona comuna, agrupar las facturas por comuna
+            
             var facturasPorComuna = invoices
-            .GroupBy(f => f.ComunaComprador) // Agrupar las facturas por la comuna
+            .GroupBy(f => f.ComunaComprador) 
                 .Select(g => new
                     {
                         Comuna = g.Key,
-                        Facturas = g.ToList() // Devolver la lista de facturas agrupadas por comuna
+                        Facturas = g.ToList()
                     })
                     .ToList();
 
