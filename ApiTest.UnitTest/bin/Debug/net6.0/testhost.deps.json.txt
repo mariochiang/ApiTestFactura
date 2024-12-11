@@ -1,0 +1,32 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": "abc123"
+  },
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Microsoft.NET.Test.Sdk/17.1.0": {
+        "runtime": {
+          "lib/net6.0/Microsoft.TestPlatform.CrossPlatEngine.dll": {}
+        }
+      },
+      "xunit/2.4.2": {
+        "runtime": {
+          "lib/net6.0/xunit.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Microsoft.NET.Test.Sdk/17.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "hash_de_la_libreria"
+    },
+    "xunit/2.4.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "hash_de_xunit"
+    }
+  }
+}
