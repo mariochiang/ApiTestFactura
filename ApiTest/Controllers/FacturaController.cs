@@ -44,7 +44,7 @@ public class FacturaController : ControllerBase
         return Ok(compradores);
     }
     
-
+        
  // Método para obtener facturas agrupadas por comuna o filtradas por comuna específica 5
     [HttpGet("comunas")]
     public IActionResult GetInvoicesGroupedOrByComuna([FromQuery] double? comuna = null)
